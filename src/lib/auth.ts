@@ -2,11 +2,15 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import CredentialsProvider from "next-auth/providers/credentials";
 
+import type { AuthOptions } from "next-auth";
+
 import { prisma } from "@/lib/prisma";
 
 import bcrypt from "bcrypt";
 
-export const authOptions = {
+const authSecret = process.env.NEXTAUTH_SECRET ?? process.env.AUTH_SECRET;
+
+export const authOptions: AuthOptions = {
 
   adapter: PrismaAdapter(prisma),
 
@@ -36,14 +40,10 @@ export const authOptions = {
 
       async authorize(credentials) {
 
-        console.log("LOGIN ATTEMPT");
-
         if (
           !credentials?.email ||
           !credentials?.password
         ) {
-
-          console.log("Missing credentials");
 
           return null;
         }
@@ -63,13 +63,7 @@ export const authOptions = {
 
           });
 
-        console.log("USER FOUND:");
-
-        console.log(user);
-
         if (!user) {
-
-          console.log("No user");
 
           return null;
         }
@@ -80,13 +74,7 @@ export const authOptions = {
             user.password
           );
 
-        console.log("PASSWORD MATCH:");
-
-        console.log(passwordMatch);
-
         if (!passwordMatch) {
-
-          console.log("Wrong password");
 
           return null;
         }
@@ -104,7 +92,7 @@ export const authOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user && "role" in user) {
-        token.role = (user as any).role;
+        token.role = user.role;
       }
       return token;
     },
@@ -116,7 +104,7 @@ export const authOptions = {
     },
   },
 
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: authSecret,
 
   pages: {
     signIn: "/login",

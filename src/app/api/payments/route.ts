@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+import { authOptions } from "@/lib/auth";
 import { v4 as uuidv4 } from "uuid";
 import { EsewaPaymentService, KhaltiPaymentService } from "@/backend/services/payment.service";
 
