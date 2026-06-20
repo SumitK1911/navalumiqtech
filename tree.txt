@@ -1,0 +1,240 @@
+﻿Folder PATH listing for volume Windows-SSD
+Volume serial number is 000000EC 247B:7049
+C:.
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 247B-7049
+C:\PROJECT\NAVA-LUMIQ-TECH\SRC
+|   auth.ts
+|   
++---app
+|   |   favicon.ico
+|   |   globals.css
+|   |   layout.tsx
+|   |   robots.ts
+|   |   sitemap.ts
+|   |   
+|   +---(public)
+|   |   |   page.tsx
+|   |   |   
+|   |   +---about
+|   |   +---blog
+|   |   |   |   page.tsx
+|   |   |   |   
+|   |   |   \---[slug]
+|   |   |           page.tsx
+|   |   |           
+|   |   +---contact
+|   |   \---services
+|   +---admin
+|   |   |   layout.tsx
+|   |   |   page.tsx
+|   |   |   
+|   |   +---(dashboard)
+|   |   |   |   page.tsx
+|   |   |   |   
+|   |   |   \---vacancies
+|   |   |       |   page.tsx
+|   |   |       |   
+|   |   |       \---create
+|   |   |               page.tsx
+|   |   |               
+|   |   +---blogs
+|   |   |       page.tsx
+|   |   |       
+|   |   +---inquiries
+|   |   |       page.tsx
+|   |   |       
+|   |   +---login
+|   |   |       page.tsx
+|   |   |       
+|   |   \---media
+|   |           page.tsx
+|   |           
+|   +---api
+|   |   +---applications
+|   |   |       route.ts
+|   |   |       
+|   |   +---auth
+|   |   |   \---[...nextauth]
+|   |   |           route.ts
+|   |   |           
+|   |   +---blogs
+|   |   |   |   route.ts
+|   |   |   |   
+|   |   |   \---[id]
+|   |   |           route.ts
+|   |   |           
+|   |   +---contact
+|   |   |       route.ts
+|   |   |       
+|   |   +---inquiries
+|   |   |       route.ts
+|   |   |       
+|   |   \---upload
+|   |           route.ts
+|   |           
+|   +---careers
+|   |   |   page.tsx
+|   |   |   
+|   |   +---frontend-developer
+|   |   \---[slug]
+|   |           page.tsx
+|   |           
+|   +---login
+|   |       page.tsx
+|   |       
+|   \---portfolio
+|       \---[slug]
+|               page.tsx
+|               
++---assets
++---backend
+|   +---actions
+|   +---helpers
+|   +---repositories
+|   |       blog.repository.ts
+|   |       inquiry.repository.ts
+|   |       
+|   \---services
+|           blog.service.ts
+|           inquiry.service.ts
+|           
++---components
+|   |   BrandLogo.tsx
+|   |   
+|   +---admin
+|   |   |   AdminLayout.tsx
+|   |   |   AdminSidebar.tsx
+|   |   |   AdminTopbar.tsx
+|   |   |   DashboardStat.tsx
+|   |   |   RecentBlogCard.tsx
+|   |   |   
+|   |   \---ui
+|   |           AdminBadge.tsx
+|   |           AdminButton.tsx
+|   |           AdminCard.tsx
+|   |           AdminInput.tsx
+|   |           AdminModal.tsx
+|   |           AdminSearch.tsx
+|   |           AdminSection.tsx
+|   |           AdminStatCard.tsx
+|   |           AdminTable.tsx
+|   |           AdminTextarea.tsx
+|   |           EmptyState.tsx
+|   |           
+|   +---animations
+|   |       AuroraBackground.tsx
+|   |       CustomCursor.tsx
+|   |       Floating.tsx
+|   |       GlowBackground.tsx
+|   |       MouseGlow.tsx
+|   |       Reveal.tsx
+|   |       SmoothScroll.tsx
+|   |       
+|   +---careers
+|   |       ApplyModal.tsx
+|   |       CareerBenefits.tsx
+|   |       CareerHero.tsx
+|   |       JobCard.tsx
+|   |       
+|   +---editor
+|   |       BlogEditor.tsx
+|   |       MediaPicker.tsx
+|   |       MediaUploader.tsx
+|   |       
+|   +---effects
+|   |       GridBackground.tsx
+|   |       
+|   +---layout
+|   |       Footer.tsx
+|   |       Navbar.tsx
+|   |       
+|   +---providers
+|   +---shared
+|   |       ServiceCard.tsx
+|   |       WhatsAppButton.tsx
+|   |       
+|   \---ui
+|           Button.tsx
+|           Container.tsx
+|           GlassCard.tsx
+|           Loader.tsx
+|           MagneticButton.tsx
+|           SectionHeading.tsx
+|           
++---data
+|       blogData.ts
+|       
++---hooks
+|       useMousePosition.ts
+|       useScroll.ts
+|       useTheme.ts
+|       
++---lib
+|       admin-nav.ts
+|       auth.ts
+|       media.ts
+|       prisma.ts
+|       supabase.ts
+|       utils.ts
+|       vacancies.ts
+|       validations.ts
+|       
++---modules
+|   |   README.md
+|   |   
+|   +---admin
+|   |       README.md
+|   |       
+|   +---auth
+|   |       README.md
+|   |       
+|   +---blog
+|   |   |   README.md
+|   |   |   types.ts
+|   |   |   
+|   |   +---components
+|   |   |       BlogCard.tsx
+|   |   |       BlogGrid.tsx
+|   |   |       FeaturedBlogCard.tsx
+|   |   |       RelatedPosts.tsx
+|   |   |       
+|   |   +---hooks
+|   |   +---repositories
+|   |   +---services
+|   |   +---types
+|   |   +---utils
+|   |   \---validators
+|   +---inquiry
+|   |       README.md
+|   |       
+|   \---media
+|           README.md
+|           
++---providers
+|       SessionProvider.tsx
+|       
++---sections
+|       AboutSection.tsx
+|       BlogSection.tsx
+|       CaseStudiesSection.tsx
+|       ContactSection.tsx
+|       HeroSection.tsx
+|       PortfolioSection.tsx
+|       PricingSection.tsx
+|       ServicesSection.tsx
+|       StatsSection.tsx
+|       TechStackSection.tsx
+|       TestimonialsSection.tsx
+|       
++---styles
++---types
+|       blog.ts
+|       common.ts
+|       inquiry.ts
+|       
+\---utils
+        formatDate.ts
+        slugify.ts
+        truncate.ts
+        
