@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import AuthProvider from "@/providers/SessionProvider";
 import AppShell from "@/components/layout/AppShell";
+import SplashScreen from "@/components/layout/SplashScreen";
+import GSAPProvider from "@/components/animations/GSAPProvider";
 
 import "./globals.css";
 
@@ -86,7 +88,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <AuthProvider>
-          <AppShell>{children}</AppShell>
+          <SplashScreen />
+          <GSAPProvider>
+            <AppShell>{children}</AppShell>
+          </GSAPProvider>
         </AuthProvider>
       </body>
     </html>

@@ -103,7 +103,7 @@ export default function HeroSection() {
       {/* Background overlays */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(34,211,238,0.18),transparent_32%),radial-gradient(circle_at_82%_24%,rgba(139,92,246,0.22),transparent_30%),linear-gradient(to_bottom,rgba(5,8,22,0.18),rgba(5,8,22,0.96)_88%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-size-[44px_44px] opacity-35 mask-[radial-gradient(ellipse_72%_58%_at_50%_24%,#000_58%,transparent_100%)]" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.035]" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E')] opacity-[0.035]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-8 py-8 lg:grid-cols-[minmax(0,1fr)_minmax(460px,0.85fr)] lg:gap-12 lg:py-16">

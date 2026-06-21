@@ -126,7 +126,7 @@ export default function ServicesSection() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(34,211,238,0.1),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(52,211,153,0.1),transparent_32%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-size-[56px_56px] opacity-30" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.025]" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E')] opacity-[0.025]" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
@@ -135,7 +135,11 @@ export default function ServicesSection() {
           description="Every service is designed like a product experience: strategic, visual, measurable, and engineered for scale."
         />
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div
+          data-gsap="fade-up"
+          data-gsap-stagger="0.08"
+          className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+        >
           {services.map((service, index) => {
             const Icon =
               serviceIcons[service.icon as keyof typeof serviceIcons] ??

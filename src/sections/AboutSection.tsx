@@ -44,7 +44,7 @@ export default function AboutSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(52,211,153,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.08),transparent_35%)]" />
 
       {/* noise */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E')]" />
 
       {/* grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[80px_80px]" />
@@ -111,19 +111,9 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-12 gap-16 items-center">
 
           {/* LEFT VISUAL */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: -40,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-            }}
+          <div
+            data-gsap="fade-right"
+            data-gsap-duration="0.9"
             className="relative lg:col-span-5"
           >
 
@@ -136,7 +126,7 @@ export default function AboutSection() {
               <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
 
               {/* content area */}
-              <div className="relative aspect-square flex items-center justify-center overflow-hidden">
+              <div className="relative aspect-square flex items-center justify-center">
 
                 {/* rotating rings */}
                 <motion.div
@@ -175,13 +165,13 @@ export default function AboutSection() {
 
                   </div>
 
-                  <div className="mt-8 text-center">
+                  <div className="mt-4 text-center px-4">
 
-                    <p className="text-xs uppercase tracking-[0.35em] text-cyan-400 font-bold mb-3">
+                    <p className="text-xs uppercase tracking-[0.35em] text-cyan-400 font-bold mb-2">
                       Engineering The Future
                     </p>
 
-                    <h3 className="text-3xl font-black text-white leading-tight">
+                    <h3 className="text-2xl font-black text-white leading-tight">
                       Nava Lumiq Tech
                     </h3>
 
@@ -198,13 +188,13 @@ export default function AboutSection() {
                     duration: 4,
                     repeat: Infinity,
                   }}
-                  className="absolute top-10 right-10 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl px-5 py-4"
+                  className="absolute top-4 right-4 min-w-[90px] rounded-2xl border border-white/10 bg-black/60 backdrop-blur-xl px-4 py-3"
                 >
-                  <p className="text-3xl font-black text-white">
+                  <p className="text-2xl font-black text-white">
                     99%
                   </p>
 
-                  <p className="text-xs uppercase tracking-[0.3em] text-cyan-400 mt-1">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-cyan-400 mt-1">
                     Success Rate
                   </p>
                 </motion.div>
@@ -217,13 +207,13 @@ export default function AboutSection() {
                     duration: 5,
                     repeat: Infinity,
                   }}
-                  className="absolute bottom-10 left-10 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl px-5 py-4"
+                  className="absolute bottom-4 left-4 min-w-[90px] rounded-2xl border border-white/10 bg-black/60 backdrop-blur-xl px-4 py-3"
                 >
-                  <p className="text-3xl font-black text-white">
+                  <p className="text-2xl font-black text-white">
                     AI
                   </p>
 
-                  <p className="text-xs uppercase tracking-[0.3em] text-violet-400 mt-1">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-violet-400 mt-1">
                     Powered Systems
                   </p>
                 </motion.div>
@@ -232,22 +222,12 @@ export default function AboutSection() {
 
             </div>
 
-          </motion.div>
+          </div>
 
           {/* RIGHT CONTENT: PRINCIPLES */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 40,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-            }}
+          <div
+            data-gsap="fade-left"
+            data-gsap-duration="0.9"
             className="lg:col-span-7"
           >
 
@@ -286,7 +266,7 @@ export default function AboutSection() {
 
             </div>
 
-          </motion.div>
+          </div>
 
         </div>
 
