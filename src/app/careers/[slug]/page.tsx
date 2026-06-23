@@ -66,7 +66,7 @@ export default async function JobDetailsPage({
             Careers
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
+          <h1 className="text-4xl font-black leading-[1.12] tracking-normal text-white sm:text-5xl md:text-6xl lg:text-7xl">
             {job.title}
           </h1>
 

@@ -30,7 +30,9 @@ export default function SectionHeading({
       <h2
         data-gsap="fade-up"
         data-gsap-delay="0.1"
-        className="text-[40px] md:text-5xl lg:text-6xl font-black text-gradient-emerald leading-[0.9]"
+        className={`mx-auto max-w-4xl text-balance break-words pb-2 text-3xl font-black leading-[1.16] tracking-normal text-gradient-emerald sm:text-4xl lg:text-5xl ${
+          center ? "" : "mx-0"
+        }`}
       >
         {title}
       </h2>
@@ -48,7 +50,9 @@ export default function SectionHeading({
       <p
         data-gsap="fade-up"
         data-gsap-delay="0.25"
-        className={`text-soft mt-8 max-w-3xl text-lg ${center ? "mx-auto" : ""}`}
+        className={`mt-8 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg ${
+          center ? "mx-auto" : ""
+        }`}
       >
         {description}
       </p>

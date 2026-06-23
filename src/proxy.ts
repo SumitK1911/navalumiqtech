@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 
+const authSecret = process.env.NEXTAUTH_SECRET ?? process.env.AUTH_SECRET;
+
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
@@ -18,7 +20,8 @@ export async function proxy(req: NextRequest) {
 
   const token = await getToken({
     req,
-    secret: process.env.NEXTAUTH_SECRET,
+    secret: authSecret,
+    secureCookie: false,
   });
 
   // Not logged in → go to admin login

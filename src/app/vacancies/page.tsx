@@ -54,7 +54,7 @@ export default function VacanciesPage() {
   }, []);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-transparent px-6 py-36">
+    <main className="relative min-h-screen overflow-hidden bg-[#050816] px-6 py-36 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.10),transparent_55%)]" />
 
       <div className="relative z-10 mx-auto max-w-6xl">

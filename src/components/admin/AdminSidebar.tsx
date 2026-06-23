@@ -111,7 +111,7 @@ export default function AdminSidebar({
       <div className={`m-5 mb-4 flex shrink-0 items-center justify-between gap-4 rounded-3xl border ${brandAccentBorder} bg-white/5 p-4`}>
 
         <div className="flex items-center gap-3">
-          <BrandLogo width={54} height={54} />
+          <BrandLogo width={54} />
 
         <div>
           <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.24em] text-sky-400">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { HiArrowRight, HiCheck, HiSparkles } from "react-icons/hi";
+import { HiArrowRight, HiBadgeCheck, HiCheck } from "react-icons/hi";
 import Reveal from "@/components/animations/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { subscriptionAddOns, subscriptionPackages } from "@/lib/subscription";
@@ -143,7 +143,7 @@ export default function PricingSection() {
                 >
                   {plan.popular && (
                     <div className="absolute right-5 top-5 flex items-center gap-2 rounded-full bg-cyan-400/20 border border-cyan-400/30 px-3 py-1 text-[10px] uppercase tracking-widest text-cyan-300">
-                      <HiSparkles />
+                      <HiBadgeCheck />
                       Popular
                     </div>
                   )}

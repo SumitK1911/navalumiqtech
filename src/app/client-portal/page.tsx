@@ -2,18 +2,11 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import {
-  HiCreditCard,
-  HiClock,
   HiShieldCheck,
   HiBookOpen,
-  HiSparkles,
   HiCheckCircle,
   HiChevronRight,
-  HiLockClosed,
   HiExclamationCircle,
-  HiCalendar,
-  HiDatabase,
-  HiRefresh,
 } from "react-icons/hi";
 import GlassCard from "@/components/ui/GlassCard";
 import { authOptions } from "@/lib/auth";
@@ -107,7 +100,7 @@ export default async function ClientPortalPage() {
   const subCyclePercentage = Math.min(100, Math.round((daysUsed / totalSubDays) * 100));
 
   return (
-    <div className="relative min-h-screen bg-transparent text-white">
+    <div className="relative min-h-screen bg-[#050816] text-white">
       {/* Dynamic Glow effects */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,182,212,0.08),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.06),transparent_35%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-size-[64px_64px]" />

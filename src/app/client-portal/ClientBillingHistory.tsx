@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HiDocumentDownload, HiExclamationCircle } from "react-icons/hi";
+import { HiDocumentDownload } from "react-icons/hi";
 import { triggerNotification } from "./ClientPortalActions";
 
 type Invoice = {

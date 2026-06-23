@@ -15,10 +15,6 @@ import {
   HiTrendingUp,
 } from "react-icons/hi";
 
-function isExpired(date: Date) {
-  return new Date(date) < new Date();
-}
-
 export default async function AdminDashboardPage() {
 
   const session = await getServerSession(authOptions);
@@ -78,7 +74,7 @@ export default async function AdminDashboardPage() {
     // If DB is unreachable, log and show a lightweight error UI instead of crashing
     // This prevents repeated server errors and heavy stack traces that can exhaust memory
     // Keep the component simple so admin can still see the login/connection issue.
-    // eslint-disable-next-line no-console
+     
     console.error("Admin dashboard DB error:", err);
 
     return (

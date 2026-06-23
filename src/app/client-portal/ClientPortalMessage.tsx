@@ -42,8 +42,8 @@ export default function ClientPortalMessage({ clientName, clientEmail }: Props) 
       setSuccess(true);
       setMessage("");
       setTopic("");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
       setLoading(false);
     }

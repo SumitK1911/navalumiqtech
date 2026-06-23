@@ -130,7 +130,7 @@ export default function ContactSection() {
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="John Doe"
+                  placeholder=""
                   className="mt-2 w-full rounded-xl border border-cyan-500/20 bg-[#020b24]/40 px-4 py-3 text-white outline-none transition focus:border-cyan-400/50 focus:shadow-[0_0_15px_rgba(34,211,238,0.15)]"
                   required
                 />
@@ -144,7 +144,7 @@ export default function ContactSection() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="john@example.com"
+                  placeholder=""
                   className="mt-2 w-full rounded-xl border border-cyan-500/20 bg-[#020b24]/40 px-4 py-3 text-white outline-none transition focus:border-cyan-400/50 focus:shadow-[0_0_15px_rgba(34,211,238,0.15)]"
                   required
                 />
@@ -167,7 +167,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 py-4 font-black text-slate-950 transition duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-400 to-emerald-400 py-4 font-black text-slate-950 transition duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? "Sending..." : "Send Message"}
                 <HiPaperAirplane className="rotate-90" />

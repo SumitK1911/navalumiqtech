@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { 
-  HiCheckCircle, 
+  HiCheckCircle,
   HiExclamationCircle, 
   HiX, 
-  HiCreditCard, 
-  HiDownload, 
-  HiKey, 
-  HiUserGroup, 
-  HiDocumentText, 
   HiAdjustments 
 } from "react-icons/hi";
+
+// Extend window object
+declare global {
+  interface Window {
+    triggerPortalToast?: (message: string, type?: "success" | "error" | "info") => void;
+  }
+}
 
 // Shared toast event channel or simple state
 type ToastState = {
@@ -23,17 +25,19 @@ type ToastState = {
 export default function ClientPortalActions() {
   const [toast, setToast] = useState<ToastState>({ show: false, message: "", type: "success" });
 
-  const showToast = (message: string, type: "success" | "error" | "info" = "success") => {
+  const showToast = useCallback((message: string, type: "success" | "error" | "info" = "success") => {
     setToast({ show: true, message, type });
     setTimeout(() => {
       setToast(prev => ({ ...prev, show: false }));
     }, 4000);
-  };
+  }, []);
 
   // Expose triggers globally for static elements to invoke
-  if (typeof window !== "undefined") {
-    (window as any).triggerPortalToast = showToast;
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.triggerPortalToast = showToast;
+    }
+  }, [showToast]);
 
   if (!toast.show) return null;
 
@@ -65,7 +69,7 @@ export default function ClientPortalActions() {
 
 // Helper to safely trigger the toast from any interactive component
 export function triggerNotification(message: string, type: "success" | "error" | "info" = "success") {
-  if (typeof window !== "undefined" && (window as any).triggerPortalToast) {
-    (window as any).triggerPortalToast(message, type);
+  if (typeof window !== "undefined" && window.triggerPortalToast) {
+    window.triggerPortalToast(message, type);
   }
 }

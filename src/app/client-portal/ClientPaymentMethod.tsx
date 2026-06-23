@@ -9,7 +9,7 @@ type Props = {
   amount: number;
 };
 
-export default function ClientPaymentMethod({ clientEmail, planId, amount }: Props) {
+export default function ClientPaymentMethod({ planId, amount }: Props) {
   const [updating, setUpdating] = useState(false);
   const [primaryMethod, setPrimaryMethod] = useState<"esewa" | "khalti">("esewa");
 
@@ -38,8 +38,8 @@ export default function ClientPaymentMethod({ clientEmail, planId, amount }: Pro
         // Redirect to payment gateway
         window.location.href = data.paymentUrl;
       }
-    } catch (error: any) {
-      triggerNotification(`Payment failed: ${error.message}`, "error");
+    } catch (error: unknown) {
+      triggerNotification(`Payment failed: ${error instanceof Error ? error.message : "Unknown error"}`, "error");
       setUpdating(false);
     }
   };

@@ -42,7 +42,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-transparent flex flex-col justify-center items-center px-6 py-12 text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#050816] flex flex-col justify-center items-center px-6 py-12 text-white">
       {/* Background radial atmosphere */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.15),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_40%)]" />
       <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-cyan-500/10 blur-[150px] pointer-events-none" />

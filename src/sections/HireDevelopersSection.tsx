@@ -8,47 +8,47 @@ import {
   HiBadgeCheck,
   HiBriefcase,
   HiClipboardCheck,
-  HiCode,
-  HiLightningBolt,
+  HiDocumentSearch,
+  HiOfficeBuilding,
   HiUsers,
 } from "react-icons/hi";
 
-const hiringSteps = [
+const applicationSteps = [
   {
-    title: "Tell us the role",
+    title: "Explore openings",
     description:
-      "Share your stack, timeline, seniority level, and delivery goals.",
+      "Review active vacancies and choose the role that fits your strengths.",
     icon: <HiClipboardCheck />,
   },
   {
-    title: "Meet vetted talent",
+    title: "Submit your profile",
     description:
-      "Review matched developers with practical product and engineering experience.",
+      "Send your CV, portfolio, and a short note about the work you enjoy.",
     icon: <HiUsers />,
   },
   {
-    title: "Start delivery",
+    title: "Interview and trial",
     description:
-      "Onboard a dedicated developer or a managed squad with admin-visible progress.",
-    icon: <HiLightningBolt />,
+      "Meet the team, discuss expectations, and complete a practical paid trial.",
+    icon: <HiDocumentSearch />,
   },
 ];
 
-const developerRoles = [
-  "Next.js Developers",
-  "Full-stack Engineers",
+const roleTracks = [
+  "Frontend Engineers",
+  "Full-stack Developers",
   "AI Automation Builders",
   "Mobile App Developers",
-  "UI/UX Product Designers",
-  "Cloud & DevOps Engineers",
+  "UI/UX Designers",
+  "Cloud & DevOps Talent",
 ];
 
-const talentPipelineHref = "/careers";
+const careersHref = "/careers";
 
 export default function HireDevelopersSection() {
   return (
     <section
-      id="hire-developers"
+      id="careers"
       className="relative overflow-hidden bg-transparent px-6 py-28"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.08),transparent_32%),radial-gradient(circle_at_80%_65%,rgba(52,211,153,0.08),transparent_28%)]" />
@@ -56,9 +56,9 @@ export default function HireDevelopersSection() {
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
-          badge="Hire Developers"
-          title="Build Your Team Without Slowing Down"
-          description="Clients can hire dedicated developers, extend their team, or request a managed delivery squad from one responsive platform."
+          badge="Careers"
+          title="Join the Team Building Premium Digital Products"
+          description="Explore current vacancies at Nava Lumiq Tech and apply for roles across engineering, design, automation, and product delivery."
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
@@ -66,22 +66,22 @@ export default function HireDevelopersSection() {
             <div className="flex h-full flex-col justify-between gap-10">
               <div>
                 <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-3xl text-cyan-300">
-                  <HiCode />
+                  <HiOfficeBuilding />
                 </div>
 
                 <h3 className="max-w-xl text-3xl font-black leading-tight text-white md:text-5xl">
-                  Hire specialists for product, platform, and AI work.
+                  See open roles and apply to work with us.
                 </h3>
 
                 <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-400 md:text-lg">
-                  Nava Lumiq Tech helps clients move from requirement to
-                  onboarded developer with role discovery, skill matching,
-                  interview coordination, and admin-managed tracking.
+                  We are looking for people who care about clean execution,
+                  thoughtful design, reliable systems, and shipping useful
+                  products for real businesses.
                 </p>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2">
-                {developerRoles.map((role) => (
+                {roleTracks.map((role) => (
                   <div
                     key={role}
                     className="flex items-center gap-3 rounded-2xl border border-white/5 bg-[#020b24]/40 px-4 py-3 text-sm font-semibold text-white hover:border-cyan-500/20 transition-all duration-300"
@@ -94,25 +94,25 @@ export default function HireDevelopersSection() {
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href={talentPipelineHref}
+                  href={careersHref}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 px-6 py-3 text-sm font-black text-black transition duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)]"
                 >
-                  View Talent Pipeline
+                  View Open Careers
                   <HiArrowRight />
                 </Link>
 
-                <a
-                  href="#contact"
+                <Link
+                  href="/vacancies"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-500/20 bg-[#020b24]/40 px-6 py-3 text-sm font-bold text-white transition duration-300 hover:border-cyan-400/50 hover:bg-[#020b24]/60 hover:shadow-[0_0_15px_rgba(34,211,238,0.15)]"
                 >
-                  Request Developers
-                </a>
+                  Browse Vacancies
+                </Link>
               </div>
             </div>
           </div>
 
           <div className="grid gap-6">
-            {hiringSteps.map((step, index) => (
+            {applicationSteps.map((step, index) => (
               <Reveal key={step.title} delay={index * 0.12}>
                 <div className="p-6 md:p-7 rounded-3xl glass-card glass-card-hover relative overflow-hidden">
                   <div className="flex gap-5">
@@ -143,11 +143,11 @@ export default function HireDevelopersSection() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white">
-                    Admin-managed hiring workflow
+                    Applications reviewed by the team
                   </p>
                   <p className="mt-1 text-sm text-gray-400">
-                    Vacancies, applicants, interviews, and client requests are
-                    designed to be operated from the admin panel.
+                    Every application is tracked from the admin panel so our
+                    team can review profiles, CVs, interviews, and next steps.
                   </p>
                 </div>
               </div>

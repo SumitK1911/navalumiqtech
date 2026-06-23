@@ -6,14 +6,12 @@ import logoImage from "../../public/logo.png";
 interface BrandLogoProps {
   className?: string;
   width?: number;
-  height?: number;
   alt?: string;
 }
 
 export default function BrandLogo({
   className = "",
   width = 48,
-  height,
   alt = "Nava Lumiq Tech logo",
 }: BrandLogoProps) {
   // Automatically calculate height to match the original 140x42 (10:3) aspect ratio,

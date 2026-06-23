@@ -12,6 +12,7 @@ import TestimonialsSection from "@/sections/TestimonialsSection";
 import StatsSection from "@/sections/StatsSection";
 import ContactSection from "@/sections/ContactSection";
 import BlogSection from "@/sections/BlogSection";
+import HireDevelopersSection from "@/sections/HireDevelopersSection";
 
 export default function Home() {
 
@@ -53,6 +54,7 @@ export default function Home() {
       <TechStackSection />
       <PricingSection />
       <PortfolioSection />
+      <HireDevelopersSection />
       <CaseStudiesSection />
       <BlogSection />
       <TestimonialsSection />

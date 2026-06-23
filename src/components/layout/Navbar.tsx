@@ -18,6 +18,7 @@ const navItems = [
   { label: "Home",        href: "/#home" },
   { label: "About",       href: "/#about" },
   { label: "Services",    href: "/#services" },
+  { label: "Careers",     href: "/#careers" },
   { label: "Case Studies",href: "/#case-studies" },
   { label: "Blog",        href: "/#blog" },
   { label: "Contact",     href: "/#contact" },
@@ -32,13 +33,29 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const sections = navItems.map((item) => item.href.split("#")[1]);
+      const sections = navItems
+        .map((item) => item.href.split("#")[1])
+        .filter(Boolean);
+
+      const anchorY = Math.min(window.innerHeight * 0.35, 260);
+      let currentSection = sections[0] || "home";
+
       for (const section of sections) {
         const el = document.getElementById(section);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        if (rect.top <= 140 && rect.bottom >= 140) setActiveSection(section);
+
+        if (rect.top <= anchorY) {
+          currentSection = section;
+        }
+
+        if (rect.top <= anchorY && rect.bottom >= anchorY) {
+          currentSection = section;
+          break;
+        }
       }
+
+      setActiveSection(currentSection);
     };
 
     handleScroll();
@@ -60,7 +77,7 @@ export default function Navbar() {
       {/* ── Main bar ────────────────────────────────────────────── */}
       <div
         className={`mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 md:px-8 transition-all duration-500 ${
-          scrolled ? "h-[80px]" : "h-[96px]"
+          scrolled ? "h-20" : "h-24"
         }`}
       >
         {/* Logo */}
@@ -71,7 +88,6 @@ export default function Navbar() {
           <div className="absolute -inset-2 rounded-full bg-linear-to-r from-cyan-400/0 via-white/5 to-violet-400/10 opacity-0 blur-lg transition duration-500 group-hover:opacity-100" />
           <BrandLogo
             width={140}
-            height={42}
             className="relative transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
@@ -94,7 +110,6 @@ export default function Navbar() {
                   />
                 )}
                 <span className="relative z-10">{item.label}</span>
-                <span className="absolute inset-x-3 bottom-0.5 h-px origin-left scale-x-0 bg-linear-to-r from-cyan-300 to-transparent transition-transform duration-300 group-hover:scale-x-100" />
               </Link>
             );
           })}

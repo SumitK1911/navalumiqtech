@@ -1,20 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import GlassCard from "@/components/ui/GlassCard";
 import Reveal from "@/components/animations/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 import SectionHeading from "@/components/ui/SectionHeading";
 import {
+  HiAcademicCap,
+  HiAdjustments,
   HiCode,
   HiChip,
-  HiLightningBolt,
-  HiGlobeAlt,
   HiArrowRight,
+  HiCloud,
   HiColorSwatch,
-  HiPencilAlt,
-  HiSparkles,
-  HiTrendingUp,
+  HiChartBar,
+  HiCog,
+  HiDatabase,
+  HiDeviceMobile,
+  HiDesktopComputer,
+  HiLightBulb,
 } from "react-icons/hi";
 
 type Service = {
@@ -30,21 +33,21 @@ const defaultServices: Service[] = [
     title: "Website Development",
     description:
       "Modern, responsive websites built for speed, clarity, and business growth.",
-    icon: "code",
+    icon: "website",
   },
   {
     id: "mobile-app-development",
     title: "Mobile App Development",
     description:
       "Reliable mobile applications for Android, iOS, and cross-platform products.",
-    icon: "lightning",
+    icon: "mobile",
   },
   {
     id: "software-solutions",
     title: "Software Solutions",
     description:
       "Custom software systems, dashboards, portals, and tools tailored to your workflow.",
-    icon: "chip",
+    icon: "code",
   },
   {
     id: "ui-ux-design",
@@ -58,39 +61,52 @@ const defaultServices: Service[] = [
     title: "Cloud Integration",
     description:
       "Scalable cloud setup, deployment, and integrations for future-ready operations.",
-    icon: "globe",
+    icon: "cloud",
   },
   {
     id: "digital-marketing",
     title: "Digital Marketing",
     description:
       "Digital campaigns, content strategy, and online visibility that help your brand grow.",
-    icon: "brand",
+    icon: "marketing",
   },
   {
     id: "it-consulting",
     title: "IT Consulting",
     description:
       "Practical technology guidance for smarter decisions, smoother systems, and growth.",
-    icon: "sparkles",
+    icon: "consulting",
   },
   {
     id: "maintenance-support",
     title: "Maintenance & Support",
     description:
       "Ongoing updates, monitoring, fixes, and support to keep your systems running well.",
-    icon: "lightning",
+    icon: "maintenance",
   },
 ];
 
 const serviceIcons = {
+  website: HiDesktopComputer,
+  mobile: HiDeviceMobile,
+  software: HiCode,
+  design: HiColorSwatch,
+  cloud: HiCloud,
+  marketing: HiChartBar,
+  consulting: HiLightBulb,
+  maintenance: HiCog,
+  support: HiCog,
+  database: HiDatabase,
+  automation: HiAdjustments,
+  training: HiAcademicCap,
   code: HiCode,
   chip: HiChip,
-  lightning: HiLightningBolt,
-  globe: HiGlobeAlt,
-  design: HiColorSwatch,
-  brand: HiPencilAlt,
-  sparkles: HiSparkles,
+  globe: HiCloud,
+  brand: HiChartBar,
+  lightning: HiDeviceMobile,
+  sparkles: HiLightBulb,
+  analytics: HiChartBar,
+  systems: HiCog,
 };
 
 export default function ServicesSection() {
@@ -143,7 +159,7 @@ export default function ServicesSection() {
           {services.map((service, index) => {
             const Icon =
               serviceIcons[service.icon as keyof typeof serviceIcons] ??
-              HiSparkles;
+              HiCog;
 
             return (
               <Reveal key={service.id} delay={index * 0.1}>

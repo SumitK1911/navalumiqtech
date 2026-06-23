@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HiCheckCircle, HiArrowUp, HiSparkles } from "react-icons/hi";
+import { HiCheckCircle, HiArrowUp } from "react-icons/hi";
 import { subscriptionPackages } from "@/lib/subscription";
 
 type Props = {
@@ -37,8 +37,8 @@ export default function ClientPortalUpgrade({ currentPlanId, clientName, clientE
       if (!res.ok) throw new Error("Request failed. Please try again.");
       setSuccess(true);
       setSelected(null);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Something went wrong.");
     } finally {
       setLoading(false);
     }

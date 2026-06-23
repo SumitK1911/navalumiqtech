@@ -33,18 +33,15 @@ export async function GET(req: NextRequest) {
     }
 
     let verified = false;
-    let updatedStatus = "failed";
 
     if (payment.method === "khalti") {
-      const pidx = (payment.metadata as any)?.pidx;
+      const pidx = (payment.metadata as { pidx?: string })?.pidx;
       if (pidx) {
         const result = await khaltiService.verifyPayment(pidx);
         verified = result.verified;
-        updatedStatus = verified ? "completed" : "failed";
       }
     } else if (payment.method === "esewa") {
       verified = await esewaService.verifyPayment(transactionId, payment.amount);
-      updatedStatus = verified ? "completed" : "failed";
     }
 
     // Update payment status

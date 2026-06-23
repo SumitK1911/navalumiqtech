@@ -1,12 +1,11 @@
 "use client";
 
-import GlassCard from "@/components/ui/GlassCard";
 import { motion } from "framer-motion";
 
 import {
+  HiChip,
   HiCheckCircle,
-  HiLightningBolt,
-  HiSparkles,
+  HiColorSwatch,
 } from "react-icons/hi";
 import { HiRocketLaunch } from "react-icons/hi2";
 
@@ -15,14 +14,14 @@ const principles = [
     title: "Precision Engineering",
     description:
       "Scalable architectures, clean systems, and performance-first development engineered for long-term growth.",
-    icon: <HiLightningBolt />,
+    icon: <HiChip />,
   },
 
   {
     title: "Human-Centered Design",
     description:
       "Beautiful interfaces crafted to feel intuitive, immersive, and emotionally engaging across every interaction.",
-    icon: <HiSparkles />,
+    icon: <HiColorSwatch />,
   },
 
   {
@@ -75,7 +74,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-white leading-tight tracking-[-0.04em] mb-8"
+            className="mb-8 text-4xl font-black leading-[1.12] tracking-normal text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Building
             <span className="text-gradient-emerald">
@@ -83,6 +82,15 @@ export default function AboutSection() {
             </span>
             {" "}Digital Systems
           </motion.h2>
+
+          {/* Gradient Line */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="mx-auto mb-8 h-px w-40 bg-gradient-to-r from-cyan-400 via-emerald-400 to-transparent origin-center"
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

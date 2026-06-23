@@ -117,7 +117,7 @@ export default function HeroSection() {
           >
             <motion.h1
               variants={revealItem}
-              className="text-balance text-[40px] font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl"
+              className="text-balance text-4xl font-black leading-[1.12] tracking-normal text-white sm:text-5xl md:text-6xl xl:text-7xl"
             >
               Engineering{" "}
               <span className="text-gradient-emerald">

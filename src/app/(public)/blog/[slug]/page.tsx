@@ -124,7 +124,7 @@ export default async function BlogPost({
             <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm font-bold">
               {post.category}
             </p>
-            <h1 className="text-5xl md:text-7xl font-black leading-tight">
+            <h1 className="text-4xl font-black leading-[1.12] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
               {post.title}
             </h1>
             <p className="text-gray-500 text-base">

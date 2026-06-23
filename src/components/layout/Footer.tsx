@@ -46,7 +46,7 @@ export default function Footer() {
             Nava Lumiq Tech
           </p>
 
-          <h2 className="mx-auto max-w-4xl bg-linear-to-r from-emerald-300 via-white to-cyan-300 bg-clip-text text-2xl font-black leading-[0.95] tracking-[-0.04em] text-transparent md:text-5xl">
+          <h2 className="mx-auto max-w-4xl bg-linear-to-r from-emerald-300 via-white to-cyan-300 bg-clip-text pb-2 text-2xl font-black leading-[1.14] tracking-normal text-transparent md:text-5xl">
             Engineering intelligent digital experiences for the next generation.
           </h2>
 
@@ -56,7 +56,7 @@ export default function Footer() {
         <div className="grid gap-16 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link href="/" className="mb-8 flex items-center gap-4">
-              <BrandLogo width={98} height={98} />
+              <BrandLogo width={98} />
             </Link>
 
             <p className="mb-8 max-w-sm text-cyan-50/80 leading-relaxed">

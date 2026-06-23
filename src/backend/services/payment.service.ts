@@ -76,8 +76,7 @@ export class KhaltiPaymentService {
     amount: number,
     productName: string,
     transactionId: string,
-    returnUrl: string,
-    webhookUrl?: string
+    returnUrl: string
   ): Promise<{ pidx: string; paymentUrl: string }> {
     try {
       const response = await axios.post(

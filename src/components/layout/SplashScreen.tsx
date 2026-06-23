@@ -102,7 +102,7 @@ export default function SplashScreen() {
             {/* Logo icon with glow */}
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-2xl" />
-              <BrandLogo width={220} height={66} className="relative drop-shadow-[0_0_24px_rgba(34,211,238,0.5)]" />
+              <BrandLogo width={220} className="relative drop-shadow-[0_0_24px_rgba(34,211,238,0.5)]" />
             </div>
 
             {/* Brand name */}

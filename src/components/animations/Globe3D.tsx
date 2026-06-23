@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import {
   HiSparkles,
@@ -97,7 +97,7 @@ function makeEarth(): HTMLCanvasElement {
   }
   g.beginPath();
   netNodes.forEach(([x, y]) => {
-    let dists = netNodes.map((n, idx) => ({ idx, d: Math.hypot(n[0]-x, n[1]-y) })).sort((a,b)=>a.d-b.d);
+    const dists = netNodes.map((n, idx) => ({ idx, d: Math.hypot(n[0]-x, n[1]-y) })).sort((a,b)=>a.d-b.d);
     g.moveTo(x, y); g.lineTo(netNodes[dists[1].idx][0], netNodes[dists[1].idx][1]);
     g.moveTo(x, y); g.lineTo(netNodes[dists[2].idx][0], netNodes[dists[2].idx][1]);
   });

@@ -106,6 +106,8 @@ export const authOptions: AuthOptions = {
 
   secret: authSecret,
 
+  useSecureCookies: false,
+
   pages: {
     signIn: "/login",
   },

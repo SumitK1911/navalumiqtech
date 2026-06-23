@@ -166,7 +166,7 @@ export default function VacancyDetailsPage() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400">
             Vacancy
           </p>
-          <h1 className="text-5xl font-black leading-none text-white md:text-7xl">
+          <h1 className="text-4xl font-black leading-[1.12] tracking-normal text-white sm:text-5xl md:text-6xl lg:text-7xl">
             {job.title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-gray-400">

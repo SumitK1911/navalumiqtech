@@ -15,7 +15,7 @@ export default function Loader() {
         transition={{ duration: 1 }}
         className="flex items-center justify-center"
       >
-        <BrandLogo width={200} height={200} />
+        <BrandLogo width={200} />
       </motion.div>
 
       {/* Loader */}

@@ -7,7 +7,9 @@ import {
   HiBriefcase,
   HiCash,
   HiArrowRight,
-  HiSparkles,
+  HiClipboardCheck,
+  HiShieldCheck,
+  HiUserGroup,
 } from "react-icons/hi";
 
 type Vacancy = {
@@ -49,7 +51,7 @@ export default function CareersPage() {
 
   return (
 
-    <main className="relative min-h-screen overflow-hidden bg-transparent px-6 pb-32 pt-40">
+    <main className="relative min-h-screen overflow-hidden bg-[#050816] px-6 pb-32 pt-40 text-white">
 
       {/* atmosphere */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.14),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.12),transparent_38%)]" />
@@ -65,15 +67,27 @@ export default function CareersPage() {
 
         <div className="mb-16 grid gap-5 md:grid-cols-3">
           {[
-            ["Culture", "Small team, high trust, sharp standards."],
-            ["Benefits", "Flexible work, growth loops, meaningful ownership."],
-            ["Application Flow", "Apply, portfolio review, interview, paid trial."],
-          ].map(([title, copy]) => (
+            {
+              title: "Culture",
+              copy: "Small team, high trust, sharp standards.",
+              icon: HiUserGroup,
+            },
+            {
+              title: "Benefits",
+              copy: "Flexible work, growth loops, meaningful ownership.",
+              icon: HiShieldCheck,
+            },
+            {
+              title: "Application Flow",
+              copy: "Apply, portfolio review, interview, paid trial.",
+              icon: HiClipboardCheck,
+            },
+          ].map(({ title, copy, icon: Icon }) => (
             <div
               key={title}
               className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 backdrop-blur-2xl"
             >
-              <HiSparkles className="mb-5 text-2xl text-cyan-300" />
+              <Icon className="mb-5 text-2xl text-cyan-300" />
               <h3 className="text-xl font-black text-white">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-400">{copy}</p>
             </div>
